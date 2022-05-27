@@ -1,0 +1,3 @@
+<upload-card *ngIf="uploadStage == idle"></upload-card>
+<uploading-card *ngIf="uploadStage == uploading"></uploading-card>
+<uploaded-card *ngIf="uploadStage == uploaded" [img]="img"></uploaded-card>

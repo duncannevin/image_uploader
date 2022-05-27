@@ -1,0 +1,19 @@
+POST http://127.0.0.1:8080
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="profile.jpg"
+
+< /Users/duncannevin/Documents/image_uploader/backend/profile.jpg
+
+###
+POST http://127.0.0.1:8080
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="gradlew.bat"
+
+< /Users/duncannevin/Documents/image_uploader/backend/gradlew.bat
+
+###
+GET http://127.0.0.1:8080/tester.jpg

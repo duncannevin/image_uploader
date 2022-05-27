@@ -1,0 +1,13 @@
+@import '../colors.scss';
+
+:host {
+
+  .green-checkmark {
+    background-color: $green-1;
+    color: #fff;
+  }
+
+  copy-input {
+    padding-top: 25px;
+  }
+}

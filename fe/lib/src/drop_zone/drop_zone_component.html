@@ -1,0 +1,12 @@
+<ng-container *ngIf="preview">
+  <img class="preview-img" [src]="img" alt="Imported image">
+</ng-container>
+
+<ng-container *ngIf="!preview">
+  <div class="drop-zone-img-container centered-content">
+    <img src="mtn.svg"/>
+  </div>
+  <div class="drop-zone-instructions-container centered-content">
+    <p class="drag-instructions gray-4-c">Drag & Drop your image here</p>
+  </div>
+</ng-container>

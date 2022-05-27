@@ -1,0 +1,19 @@
+<card>
+  <top>
+    <h4 class="align-center">Upload your image</h4>
+    <p class="smaller-p align-center">File should be Jpeg, Png...</p>
+  </top>
+  
+  <content>
+    <drop-zone (file)="handleFile($event)"></drop-zone>
+  </content>
+  
+  <action>
+    <p class="align-center gray-3-c">
+      Or
+    </p>
+    <div class="center-content">
+      <choose-file (file)="handleFile($event)"></choose-file>
+    </div>
+  </action>
+</card>

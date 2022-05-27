@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex-direction: column;
+
+  width: 338px;
+  height: 219px;
+  border: 1px dashed #97BEF4;
+  background-color: #F6F8FB;
+  margin-top: 20px;
+
+  &, .preview-img {
+    border-radius: 12px;
+  }
+
+  .preview-img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+:host .drop-zone-img-container {
+  flex: 2;
+}
+
+:host .drop-zone-instructions-container {
+  flex: 1;
+}

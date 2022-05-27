@@ -1,0 +1,4 @@
+<input style="display: none;" type="file" class="file-input"
+       (change)="fileSelected($event.target.files)" #fileUpload>
+
+<button class="blue-btn" (click)="fileUpload.click()">Choose a file</button> 
