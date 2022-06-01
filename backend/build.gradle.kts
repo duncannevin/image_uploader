@@ -6,9 +6,10 @@ plugins {
     application
     kotlin("jvm") version "1.6.21"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.6.21"
+    id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
-group = "com.example"
+group = "com.duncannevin.image_uploader"
 version = "0.0.1"
 application {
     mainClass.set("io.ktor.server.netty.EngineMain")

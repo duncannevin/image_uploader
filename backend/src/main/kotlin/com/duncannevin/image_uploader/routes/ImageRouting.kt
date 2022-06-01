@@ -28,7 +28,7 @@ fun Route.imageRouting() {
                     extension = originalFileName.split(".").last()
 
                     when (extension) {
-                        "png", "jpg" -> {
+                        "png", "jpg", "jpeg" -> {
                             fileName = "image-$id.$extension"
                             var fileBytes = part.streamProvider().readBytes()
                             File("$uploadsLocation/$fileName").writeBytes(fileBytes)
