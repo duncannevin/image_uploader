@@ -2,7 +2,7 @@ import 'dart:html';
 import 'dart:convert';
 import 'dart:async';
 
-enum UploadStage { IDLE, UPLOADING, UPLOADED }
+enum UploadStage { IDLE, UPLOADING, UPLOADED, FAIL }
 
 class Upload {
   String id;
@@ -13,7 +13,8 @@ class Upload {
         location = json['location'];
 }
 
-final UPLOADER_LOCATION = const String.fromEnvironment('uploaderLocation', defaultValue: 'http://localhost:3000');
+final UPLOADER_LOCATION = const String.fromEnvironment('uploaderLocation',
+    defaultValue: 'http://localhost:3000');
 
 class UploaderService {
   String uploadedImg = '';
@@ -35,10 +36,10 @@ class UploaderService {
           method: 'POST', sendData: formData);
 
       uploadedImg = Upload.fromJson(jsonDecode(request.response)).location;
+      stage = UploadStage.UPLOADED;
     } catch (e) {
       print(e.toString());
-    } finally {
-      stage = UploadStage.UPLOADED;
+      stage = UploadStage.FAIL;
     }
   }
 }

@@ -36,6 +36,11 @@ html, body {
   justify-content: center;
 }
 
+a, .a {
+  color: $blue-1;
+  cursor: pointer;
+}
+
 button, .btn {
   border: none;
   border-radius: 8px;
@@ -102,6 +107,11 @@ progress {
 
 .material-icons.green {
   background-color: $green-1;
+  color: #FFF;
+}
+
+.material-icons.red {
+  background-color: $red-1;
   color: #FFF;
 }
 
