@@ -1,7 +1,6 @@
 import 'dart:html';
 import 'dart:convert';
 import 'dart:async';
-import 'package:http/http.dart';
 
 enum UploadStage { IDLE, UPLOADING, UPLOADED }
 
@@ -9,11 +8,9 @@ class Upload {
   String id;
   String location;
 
-  static Upload jsonDecode(String jsonStr) {
-    return json.decode(jsonStr);
-  }
-
-  Upload(this.id, this.location);
+  Upload.fromJson(Map<String, dynamic> json) :
+    id = json['id'],
+    location = json['location'];
 }
 
 class UploaderService {
@@ -30,10 +27,10 @@ class UploaderService {
       var formData = FormData();
       formData.appendBlob('img', file);
 
-      final response = await HttpRequest.request(_uploaderLocation,
-          method: 'POST', sendData: formData).then((value) => value.response);
+      final request = await HttpRequest.request(_uploaderLocation,
+          method: 'POST', sendData: formData);
 
-      print(Upload.jsonDecode(response.toString()));
+      uploadedImg = Upload.fromJson(jsonDecode(request.response)).location;
     } catch (e) {
       print(e.toString());
     } finally {

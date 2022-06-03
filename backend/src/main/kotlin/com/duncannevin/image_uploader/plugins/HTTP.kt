@@ -6,8 +6,10 @@ import io.ktor.server.application.*
 
 fun Application.configureHTTP() {
     install(CORS) {
+        allowCredentials = true;
         allowMethod(HttpMethod.Options)
         allowMethod(HttpMethod.Put)
+        allowMethod(HttpMethod.Post)
         allowMethod(HttpMethod.Delete)
         allowMethod(HttpMethod.Patch)
         allowHeader(HttpHeaders.Authorization)
