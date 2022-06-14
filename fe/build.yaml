@@ -1,10 +1,15 @@
 targets:
   $default:
-    sources:
-      include: ["lib/**", "web/**"]
     builders:
       build_web_compilers|entrypoint:
+        generate_for:
+        - web/main.dart
         release_options:
-         dart2js_args:
-           - -DuploaderLocation=https://example.com
-           - -DenableFeatureOne=true
+          dart2js_args:
+            - -DuploaderLocation=/
+            - -DenableFeatureOne=true
+        options:
+          dart2js_args:
+          - --minify
+          - --trust-primitives
+          - --dump-info
